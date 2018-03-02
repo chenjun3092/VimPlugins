@@ -38,7 +38,7 @@ VimPlugins
   $sudo apt -y install python-setuptools
   $sudo asy_install flake8 
   $sudo apt -y install nodejs
-  $sudo -y apt install npm
+  $sudo apt -y install npm
   $sudo npm install jshint -g
   ```
 
