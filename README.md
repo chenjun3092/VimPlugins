@@ -41,6 +41,11 @@ VimPlugins
   $sudo apt -y install npm
   $sudo npm install jshint -g
   ```
+  Either-or
+  ```
+  $cd ~/.vim
+  $bash install-requirements.sh
+  ```
 
 ### Included Color Schemes
 
