@@ -4,7 +4,7 @@ VimPlugins
 
 ###Quick Installation  
 
-	$git clone https://github.com/chenfjm/VimPlugins.git
+	$git clone https://github.com/chenjun3092/VimPlugins.git
 	$mv VimPlugins ~/.vim
 	$cd .vim
 	$git submodule init
@@ -14,6 +14,8 @@ VimPlugins
 ###PluginInstall  
 
 	$:PluginInstall(in vim)
+	$sudo apt -y install build-essential cmake (ubuntu 16.04)
+	$sudo apt -y install python-dev python3-dev
 	$cd ~/.vim/bundle/YouCompleteMe
 	$./install.sh (--clang-completer)
 
@@ -32,10 +34,12 @@ VimPlugins
 - Linux    
 
   ```
-  $apt-get install ctags
-  $easy_install flake8 
-  $apt-get install nodejs
-  $npm install jshint -g
+  $sudo apt -y install ctags
+  $sudo apt -y install python-setuptools
+  $sudo asy_install flake8 
+  $sudo apt -y install nodejs
+  $sudo -y apt install npm
+  $sudo npm install jshint -g
   ```
 
 ### Included Color Schemes
