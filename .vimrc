@@ -41,7 +41,7 @@ filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "      	                          主题                                      
- colorscheme monokai
+colorscheme monokai
 "colorscheme solarized
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -49,31 +49,30 @@ filetype plugin indent on
 "                               基本配置
 "
 "开启语法高亮
- syntax on
+syntax on
 "
 "自动、智能缩进
- autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
- autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
- autocmd BufRead *.vue setlocal ts=2 sts=2 sw=2 expandtab
- autocmd BufRead *.css setlocal ts=2 sts=2 sw=2 expandtab
- set ts=4
- set expandtab
- set autoindent
- set fileformat=unix
- filetype indent on
+autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd BufRead *.vue setlocal ts=2 sts=2 sw=2 expandtab
+autocmd BufRead *.css setlocal ts=2 sts=2 sw=2 expandtab
+set ts=4 sts=4 sw=4 expandtab
+set autoindent
+set fileformat=unix
+filetype indent on
 
 "paste toggle
- set pastetoggle=<C-t>
+set pastetoggle=<C-t>
 "中文乱码"
- set fileencodings=utf-8,chinese
+set fileencodings=utf-8,chinese
 "默认展开所有代码
- set foldmethod=indent
- nnoremap <space><space> za
- set foldlevel=99
+set foldmethod=indent
+nnoremap <space><space> za
+set foldlevel=99
 "显示当前的行号列号：
- set ruler
+set ruler
 "显示行号：
- set number
+set number
 "行宽
 set textwidth=90
 "自动折行
@@ -87,13 +86,15 @@ set incsearch                   " do incremental searching, search as you type
 set ignorecase                  " ignore case when searching
 set smartcase                   " no ignorecase if Uppercase char present
 "在当前目录及子目录下用find打开指定文件
- set path=./**
+set path=./**
+
 "恢复上次光标位置
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
 endif
+
 "启动界面
- set shortmess=atI
+set shortmess=atI
 "Alt 组合键不映射到菜单上
 set winaltkeys=no
 
@@ -156,7 +157,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             ctags
-"
 let Tlist_Ctags_Cmd='/usr/bin/ctags'
 "let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 "let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
@@ -249,7 +249,7 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif	
 "回车即选中当前项
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"	
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"	
 
 let g:ycm_key_invoke_completion = '<Enter>'
 let g:ycm_semantic_triggers =  {'c' : ['->', '.'], 'objc' : ['->', '.'], 'ocaml' : ['.', '#'], 'cpp,objcpp' : ['->', '.', '::'], 'php' : ['->', '::'], 'cs,java,javascript,vim,coffee,python,scala,go' : ['.'], 'ruby' : ['.', '::']}
@@ -311,6 +311,18 @@ function HeaderPython()
     normal o
 endf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  py文件头
+autocmd bufnewfile *.sh call HeaderShell()
+function HeaderShell()
+    call setline(1, "#!/bin/bash")
+    normal G
+    normal o
+    normal o
+endf
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 docstring
