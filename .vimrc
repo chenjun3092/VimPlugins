@@ -56,6 +56,8 @@ filetype plugin indent on
  autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
  autocmd BufRead *.vue setlocal ts=2 sts=2 sw=2 expandtab
  autocmd BufRead *.css setlocal ts=2 sts=2 sw=2 expandtab
+ set ts=4
+ set expandtab
  set autoindent
  set fileformat=unix
  filetype indent on
@@ -76,9 +78,9 @@ filetype plugin indent on
 set textwidth=90
 "自动折行
 "set nowrap
- set wrap
+set wrap
 "在html标签之间跳转(%)
- runtime macros/matchit.vim 
+runtime macros/matchit.vim 
 " 搜索
 set hlsearch                    " highlight searches
 set incsearch                   " do incremental searching, search as you type
@@ -93,7 +95,7 @@ endif
 "启动界面
  set shortmess=atI
 "Alt 组合键不映射到菜单上
- set winaltkeys=no
+set winaltkeys=no
 
 imap jj <Esc>
 imap <C-h> <left>
@@ -155,7 +157,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             ctags
 "
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+"let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 "let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
 "用法：$ ctags –R src
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,7 +166,8 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "							 tagbar
 autocmd BufRead *.* nmap tb :Tagbar<cr>
-let tagbar_ctags_bin='/usr/local/bin/ctags'
+let tagbar_ctags_bin='/usr/bin/ctags'
+"let tagbar_ctags_bin='/usr/local/bin/ctags'
 let tagbar_width=35
 let g:tagbar_compact = 1
 let g:tagbar_autoshowtag = 1
@@ -263,7 +267,7 @@ let g:jedi#documentation_command = "<C-g>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               pydiction 
- let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+ let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
  let g:pydiction_menu_height = 30
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
