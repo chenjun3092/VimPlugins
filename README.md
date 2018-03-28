@@ -27,7 +27,7 @@ VimPlugins
   $brew install ctags
   $easy_install flake8 
   $brew install nodejs
-  $npm install jshint -g  
+  $npm install eslint -g  
   ```
 
 
@@ -36,10 +36,10 @@ VimPlugins
   ```
   $sudo apt -y install ctags
   $sudo apt -y install python-setuptools
-  $sudo asy_install flake8 
+  $sudo easy_install flake8 
   $sudo apt -y install nodejs
   $sudo apt -y install npm
-  $sudo npm install jshint -g
+  $sudo npm -i -g eslint
   ```
   Either-or
   ```
