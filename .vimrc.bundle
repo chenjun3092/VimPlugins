@@ -24,6 +24,9 @@ Plugin 'ybian/smartim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+"C
+Plugin 'vim-scripts/c.vim'
+
 "python
 Plugin 'pydoc.vim'
 Plugin 'heavenshell/vim-pydocstring'
